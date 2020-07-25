@@ -9,5 +9,8 @@ fun main(args: Array<String>) {
 
     println("is not necesary + $b")
 
-    print(b.subSequence(0, 2))
+    println(b.subSequence(0, 2))
+
+    var ob1 = User("jimmy", 30)
+    println(ob1)
 }
