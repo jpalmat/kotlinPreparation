@@ -39,4 +39,15 @@ fun main(args: Array<String>) {
     var thirdList: List<String> = listOf("z", "a", "b", "a")
     var fourthList = thirdList.sortedWith(stringComparator)
     fourthList.forEach({x -> println(x)})
+
+    println("filter list")
+    var fifthList = listOf<String>("a", "bb")
+    var sixthList = fifthList.filter { it.length < 2 }
+    sixthList.forEach({x -> println(x)})
+
+    println("partition")
+    var seventhList = listOf<String>("a", "aa", "b", "bb")
+    var (eigthList, nineList) = seventhList.partition { it.length > 1 }
+    eigthList.forEach({x -> println(x)})
+    nineList.forEach({x -> println(x)})
 }
