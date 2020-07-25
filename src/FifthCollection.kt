@@ -1,29 +1,29 @@
 import com.sun.xml.internal.fastinfoset.util.StringArray
 
 fun main(args: Array<String>) {
-    println("unmutable list")
+    println("--unmutable list")
     var firstList: List<Int> = listOf(1, 3, 1) //arraylist
 
     firstList.forEach({i -> println(i) })
     println(firstList.get(0))
 
-    println("mutable list")
+    println("--mutable list")
     var secondList = mutableListOf("z", "a", "b")
     secondList.forEach({x -> println(x)})
 
-    println("sort list")
+    println("--sort list")
     secondList.sort()
     secondList.forEach({x -> println(x)})
 
-    println("unmutable set")
+    println("--unmutable set")
     var fistSet: Set<String> = setOf("jimmy", "maryam", "jimmy")
     fistSet.forEach({i -> println(i)})
 
-    println("treeset")
+    println("--treeset")
     var secondSet: Set<String> = sortedSetOf("z", "a", "b", "a")
     secondSet.forEach({x -> println(x)})
 
-    println("unmutable map")
+    println("--unmutable map")
     var firstMap: Map<Int, String> = mapOf(1 to "jimmy", 2 to "maryam")
     println(firstMap.get(1))
     println(firstMap.keys)
@@ -33,4 +33,10 @@ fun main(args: Array<String>) {
 //
 //    println("tree map")
 //    var secondMap: Map<>
+
+    println("collection sort comparator")
+    val stringComparator = Comparator {  x: String, y: String -> x.compareTo(y) }
+    var thirdList: List<String> = listOf("z", "a", "b", "a")
+    var fourthList = thirdList.sortedWith(stringComparator)
+    fourthList.forEach({x -> println(x)})
 }
